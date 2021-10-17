@@ -4,7 +4,7 @@ import det
 import replaceRow
 import transpose
 
-fun kramer(): MutableList<Double> {
+fun kramer(): Array<Double> {
     val matrix = InitialData.matrix
     val b = InitialData.b
 
@@ -16,5 +16,5 @@ fun kramer(): MutableList<Double> {
     for (i in 0 until t.size) {
         result.add(det(replaceRow(t, i, b)) / d)
     }
-    return result
+    return result.toTypedArray()
 }
