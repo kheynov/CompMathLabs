@@ -10,7 +10,7 @@ fun gauss(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int?> {
     for (i in 0 until n) {
         val firstElement = extended[i][i]
         for (j in 0 until n + 1) {
-            extended[i][j] /= firstElement;
+            extended[i][j] /= firstElement
         }
 
         for (k in i + 1 until n) {
