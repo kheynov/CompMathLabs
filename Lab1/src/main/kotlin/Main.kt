@@ -1,7 +1,6 @@
 import methods.gauss
 import methods.iterations
 import methods.kramer
-import java.util.*
 
 fun main() {
     println("Kramer method: ")
