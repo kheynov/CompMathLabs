@@ -5,7 +5,7 @@ object InitialData {
         arrayOf(3.0, 4.0, 43.0, 23.0),
         arrayOf(8.0, 13.0, 14.0, 59.0)
     )
-    const val eps = 0.00001
+    const val eps = 1e-5
     val b = arrayOf(1.0, 2.0, 3.0, 4.0)
 }
 
