@@ -18,7 +18,9 @@ fun minor(
     return newMatrix
 }
 
-fun det(matrix: MutableList<MutableList<Int>>): Int {
+fun det(
+    matrix: MutableList<MutableList<Int>>
+): Int {
     if (matrix.size == 1 && matrix[0].size == 1) return matrix[0][0]
     var result = 0.0
     for (i in matrix.indices) {
