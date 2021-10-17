@@ -1,3 +1,5 @@
+package methods
+
 fun gauss(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int?> {
     val n = b.size
     val extended = matrix.clone()
