@@ -1,8 +1,18 @@
 package methods
 
-fun gauss(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int?> {
+fun gauss(): Array<Double?> {
+    val matrix = InitialData.matrix
+    val b = InitialData.b
+
     val n = b.size
-    val extended = matrix.clone()
+    val extended = Array(matrix.size) { Array(matrix.size + 1) { 0.0 } }
+
+    for (i in matrix.indices) {
+        for (j in matrix[0].indices) {
+            extended[i][j] = matrix[i][j]
+        }
+    }
+
     for (i in 0 until n) {
         extended[i][n] = b[i]
     }
@@ -20,12 +30,12 @@ fun gauss(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int?> {
             }
         }
     }
-    val result = arrayOfNulls<Int>(n)
+    val result = arrayOfNulls<Double>(n)
     for (i in n - 1 downTo 0) {
         val value = extended[i][n]
-        var sum = 0
+        var sum = 0.0
         for (j in 0 until n) {
-            sum += if (result[j] === null) 0 else extended[i][j] * result[j]!!
+            sum += if (result[j] == null) 0.0 else extended[i][j] * result[j]!!
         }
         result[i] = (value - sum) / extended[i][i]
     }
