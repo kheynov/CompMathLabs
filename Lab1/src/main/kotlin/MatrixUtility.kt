@@ -45,12 +45,12 @@ fun replaceRow(
     matrix: MutableList<MutableList<Int>>,
     rowIndex: Int,
     row: MutableList<Int>
-) : MutableList<MutableList<Int>> {
+): MutableList<MutableList<Int>> {
     val newMatrix = mutableListOf<MutableList<Int>>()
-    for (i in matrix.indices){
+    for (i in matrix.indices) {
         if (i == rowIndex) newMatrix[i] = row
-        else{
-            for (j in matrix[i].indices){
+        else {
+            for (j in matrix[i].indices) {
                 newMatrix[i][j] = matrix[i][j]
             }
         }
