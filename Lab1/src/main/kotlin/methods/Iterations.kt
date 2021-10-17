@@ -3,16 +3,19 @@ package methods
 import InitialData
 import kotlin.math.abs
 
-fun iterations(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int> {
+fun iterations(): Array<Double> {
+    val matrix = InitialData.matrix
+    val b = InitialData.b
+
     val n = matrix.size
     for (i in 0 until n) {
-        if (matrix[i][i] == 0) throw Error("Diagonal coefficients must not be equal to 0")
+        if (matrix[i][i] == 0.0) throw Error("Diagonal coefficients must not be equal to 0")
     }
 
     for (i in 0 until n) {
-        var sum = 0
+        var sum = 0.0
         for (j in 0 until n) {
-            sum += if (i == j) 0 else abs(matrix[i][j])
+            sum += if (i == j) 0.0 else abs(matrix[i][j])
         }
         if (abs(matrix[i][i]) <= sum) throw Error("Diagonal dominance is not fulfilled in the provided matrix")
     }
@@ -25,7 +28,7 @@ fun iterations(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int> {
     val alpha = matrix.clone()
     for (i in 0 until n) {
         for (j in 0 until n) {
-            alpha[i][j] = if (i == j) 0 else -alpha[i][j] / matrix[i][i]
+            alpha[i][j] = if (i == j) 0.0 else -alpha[i][j] / matrix[i][i]
         }
     }
 
@@ -35,9 +38,9 @@ fun iterations(matrix: Array<Array<Int>>, b: Array<Int>): Array<Int> {
         iterations++
         val result = beta.clone()
         for (i in 0 until n) {
-            var sum = 0
+            var sum = 0.0
             for (j in 0 until n) {
-                sum += alpha[i][j] * xs[j]
+                sum += (alpha[i][j] * xs[j])
             }
             result[i] += sum
         }
