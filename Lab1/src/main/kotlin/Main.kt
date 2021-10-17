@@ -5,11 +5,12 @@ import java.util.*
 
 fun main() {
     println("Kramer method: ")
-    println(kramer())
+    println(kramer().contentToString())
     println("------------")
+    println("Gauss method: ")
     println(gauss().contentToString())
     println("------------")
     println("Iterations method: ")
-    println(iterations())
+    println(iterations().contentToString())
     println("------------")
 }
