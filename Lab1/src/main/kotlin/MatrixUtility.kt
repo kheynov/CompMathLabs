@@ -15,7 +15,6 @@ fun minor(
         }
         newMatrix.add(newRow)
     }
-
     return newMatrix.mutableMatrixToArray()
 }
 

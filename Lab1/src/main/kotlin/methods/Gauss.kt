@@ -1,9 +1,9 @@
 package methods
 
-fun gauss(): Array<Double?> {
-    val matrix = InitialData.matrix
-    val b = InitialData.b
-
+fun gauss(
+    matrix: Array<Array<Double>>,
+    b: Array<Double>
+): Array<Double?> {
     val n = b.size
     val extended = Array(matrix.size) { Array(matrix.size + 1) { 0.0 } }
 
