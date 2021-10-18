@@ -21,8 +21,8 @@ fun iterations(
         if (abs(matrix[i][i]) <= sum) throw Error("Diagonal dominance is not fulfilled in the provided matrix")
     }
 
-    val result = mutableListOf(0.0, 0.0, 0.0, 0.0)
-    val nextX = mutableListOf(0.0, 0.0, 0.0, 0.0)
+    val result = arrayOf(0.0, 0.0, 0.0, 0.0)
+    val nextX = arrayOf(0.0, 0.0, 0.0, 0.0)
 
     do {
         for (i in matrix.indices) {
@@ -45,9 +45,9 @@ fun iterations(
             nextX = nextX
         )
     )
-    return result.toTypedArray()
+    return result
 }
-fun validateEpsilon(x: MutableList<Double>, nextX: MutableList<Double>): Boolean {
+fun validateEpsilon(x: Array<Double>, nextX: Array<Double>): Boolean {
     var iter = 0
     for (i in x.indices) {
         if (abs(x[i] - nextX[i]) >= InitialData.eps) {
