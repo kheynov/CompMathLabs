@@ -3,7 +3,7 @@ package methods
 fun gauss(
     matrix: Array<Array<Double>>,
     b: Array<Double>
-): Array<Double?> {
+): Array<Double> {
     val n = b.size
     val extended = Array(matrix.size) { Array(matrix.size + 1) { 0.0 } }
 
@@ -39,5 +39,5 @@ fun gauss(
         }
         result[i] = (value - sum) / extended[i][i]
     }
-    return result
+    return result.requireNoNulls()
 }
