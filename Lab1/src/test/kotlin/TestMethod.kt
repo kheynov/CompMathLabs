@@ -16,15 +16,15 @@ fun testMethod(
     println("----------------------")
     println("Result: \n")
     val result: Array<Double>
-    val elapsedTime = measureTimeMillis {
+    val elapsedTime = measureTimeMillis { //calculating time
         result = method(matrix, values)
     }
-    for (i in result.indices) {
+    for (i in result.indices) {//prettify array output
         println("X$i= ${result[i]}")
     }
     println("\nTOTAL TIME: $elapsedTime milliseconds")
     var success = true
-    result.forEach { success = abs(it - solution[result.indexOf(it)]) < eps }
+    result.forEach { success = abs(it - solution[result.indexOf(it)]) < eps } //check solution deviation
     println("TEST PASSED: $success")
     println("======================")
 }

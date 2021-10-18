@@ -19,6 +19,7 @@ fun minor(
 }
 
 private fun MutableList<MutableList<Double>>.mutableMatrixToArray(): Array<Array<Double>> {
+//Extendable function to make simple array from mutable matrix
     val newArrayMatrix = Array(this.size) { Array(this.size) { 0.0 } }
     for (i in this.indices) {
         for (j in this[i].indices) {
@@ -28,7 +29,7 @@ private fun MutableList<MutableList<Double>>.mutableMatrixToArray(): Array<Array
     return newArrayMatrix
 }
 
-fun det(
+fun det(//calculating determinant of a matrix
     matrix: Array<Array<Double>>
 ): Double {
     if (matrix.size == 1 && matrix[0].size == 1) return matrix[0][0]
@@ -39,7 +40,7 @@ fun det(
     return result
 }
 
-fun transpose(
+fun transpose(//transposing a matrix
     matrix: Array<Array<Double>>
 ): MutableList<MutableList<Double>> {
     val newMatrix = MutableList(matrix.size) { MutableList(matrix[0].size) { 0.0 } }
@@ -51,7 +52,7 @@ fun transpose(
     return newMatrix
 }
 
-fun replaceRow(
+fun replaceRow(//replace a row in a matrix to an another row
     matrix: MutableList<MutableList<Double>>,
     rowIndex: Int,
     row: Array<Double>

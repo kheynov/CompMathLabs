@@ -5,15 +5,15 @@ fun gauss(
     b: Array<Double>
 ): Array<Double> {
     val n = b.size
-    val extended = Array(matrix.size) { Array(matrix.size + 1) { 0.0 } }
+    val extended = Array(matrix.size) { Array(matrix.size + 1) { 0.0 } }//creating an extended matrix of a solution
 
-    for (i in matrix.indices) {
+    for (i in matrix.indices) { //copy a matrix of equation to an extended matrix
         for (j in matrix[0].indices) {
             extended[i][j] = matrix[i][j]
         }
     }
 
-    for (i in 0 until n) {
+    for (i in 0 until n) {//adding b values to an extended matrix
         extended[i][n] = b[i]
     }
 
@@ -30,6 +30,7 @@ fun gauss(
             }
         }
     }
+
     val result = arrayOfNulls<Double>(n)
     for (i in n - 1 downTo 0) {
         val value = extended[i][n]
