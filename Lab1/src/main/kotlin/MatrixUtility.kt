@@ -52,7 +52,7 @@ fun transpose(//transposing a matrix
     return newMatrix
 }
 
-fun replaceRow(//replace a row in a matrix to an another row
+fun replaceRow(//replace a row in a matrix
     matrix: MutableList<MutableList<Double>>,
     rowIndex: Int,
     row: Array<Double>
