@@ -31,6 +31,9 @@ fun gauss(
         }
     }
 
+
+
+
     val result = arrayOfNulls<Double>(n)
     for (i in n - 1 downTo 0) {
         val value = extended[i][n]
